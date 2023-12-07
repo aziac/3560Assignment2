@@ -14,11 +14,13 @@ public class UserElement extends Subject implements Observer, TreeNode{
 	private ObservableList<UserElement> followingList = FXCollections.observableList(following);
 	private List<String> myTweets = new ArrayList<>();
 	private List<String> newsFeed = new ArrayList<>(Arrays.asList());
-
 	private ObservableList<String> newsFeedList = FXCollections.observableList(newsFeed);
+	private long creationTime;
+	private long lastUpdateTime = 0;
 	
 	public UserElement(String userID) {
 		this.userID = userID;
+		this.setCreationTime(System.currentTimeMillis());
 	}
 	
 	@Override
@@ -30,6 +32,8 @@ public class UserElement extends Subject implements Observer, TreeNode{
 	public void update(Subject subject, String message) {
 		if (subject instanceof UserElement) {
 			this.newsFeedList.add("- " + ((UserElement) subject).getID() + ": " + message);
+			lastUpdateTime = System.currentTimeMillis();
+			this.newsFeedList.add("Last Updated: " + lastUpdateTime);
 		}
 	}
 	
@@ -54,6 +58,9 @@ public class UserElement extends Subject implements Observer, TreeNode{
 		myTweets.add(message);
 
         newsFeedList.add("-" + this.userID + " : " + message);
+        
+		lastUpdateTime = System.currentTimeMillis();
+		this.newsFeedList.add("Last Updated: " + lastUpdateTime);
 
 		notifyObservers(message);
 	}
@@ -66,6 +73,18 @@ public class UserElement extends Subject implements Observer, TreeNode{
 	@Override
 	public void accept(ElementVisitor visitor) {
 		visitor.visitUser(this);
+	}
+
+	public long getCreationTime() {
+		return creationTime;
+	}
+
+	public void setCreationTime(long creationTime) {
+		this.creationTime = creationTime;
+	}
+	
+	public long getLastUpdateTime() {
+		return lastUpdateTime;
 	}
 
 }

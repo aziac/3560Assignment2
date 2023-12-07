@@ -1,5 +1,6 @@
 package application;
 
+
 public class UserTotalVisitor implements ElementVisitor{
 
 	private int totalUsers = 0;

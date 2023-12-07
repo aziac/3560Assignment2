@@ -6,18 +6,20 @@
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
    <children>
       <Button fx:id="userViewButton" layoutX="363.0" layoutY="136.0" mnemonicParsing="false" onAction="#openUserView" text="Open User View" />
-      <Button fx:id="userTotalButton" layoutX="294.0" layoutY="313.0" mnemonicParsing="false" onAction="#showUserTotal" text="Show User Total" />
-      <Button fx:id="groupTotalButton" layoutX="449.0" layoutY="313.0" mnemonicParsing="false" onAction="#showGroupTotal" text="Show Group Total" />
-      <Button fx:id="messagesTotalButton" layoutX="279.0" layoutY="353.0" mnemonicParsing="false" onAction="#showMessagesTotal" text="Show Messages Total" />
-      <Button fx:id="positivePercentageButton" layoutX="427.0" layoutY="353.0" mnemonicParsing="false" onAction="#showPositivePercentage" text="Show Positive Percentage" />
+      <Button fx:id="userTotalButton" layoutX="275.0" layoutY="313.0" mnemonicParsing="false" onAction="#showUserTotal" text="Show User Total" />
+      <Button fx:id="groupTotalButton" layoutX="426.0" layoutY="313.0" mnemonicParsing="false" onAction="#showGroupTotal" text="Show Group Total" />
+      <Button fx:id="messagesTotalButton" layoutX="260.0" layoutY="353.0" mnemonicParsing="false" onAction="#showMessagesTotal" text="Show Messages Total" />
+      <Button fx:id="positivePercentageButton" layoutX="416.0" layoutY="353.0" mnemonicParsing="false" onAction="#showPositivePercentage" text="Show Positive Percentage" />
       <Button layoutX="472.0" layoutY="32.0" mnemonicParsing="false" onAction="#addUser" text="Add User" />
       <Button layoutX="468.0" layoutY="82.0" mnemonicParsing="false" onAction="#addGroup" text="Add Group" />
       <TextField fx:id="userInputID" layoutX="294.0" layoutY="32.0" prefHeight="26.0" prefWidth="160.0" promptText="User ID" />
       <TextField fx:id="groupInputID" layoutX="294.0" layoutY="82.0" promptText="Group ID" />
       <TreeView fx:id="treeview" layoutX="14.0" layoutY="15.0" onContextMenuRequested="#selectItem" onMouseClicked="#selectItem" prefHeight="370.0" prefWidth="220.0" />
       <Label fx:id="visitorLabel" alignment="CENTER" layoutX="260.0" layoutY="200.0" prefHeight="70.0" prefWidth="304.0" text="Statistics will display here" />
+      <Button fx:id="verifyUsersButton" layoutX="582.0" layoutY="58.0" mnemonicParsing="false" onAction="#verifyUsers" text="Verify Users" />
+      <Button fx:id="lastUpdateButton" layoutX="558.0" layoutY="209.0" mnemonicParsing="false" onAction="#showLastUpdate" text="Show Last Update" />
    </children>
 </AnchorPane>

@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserController">
    <children>
       <Button layoutX="309.0" layoutY="14.0" mnemonicParsing="false" onAction="#followUser" text="Follow User" />
       <ListView fx:id="currentlyFollowing" layoutX="13.0" layoutY="63.0" prefHeight="78.0" prefWidth="376.0" />
@@ -16,5 +16,6 @@
       <TextField fx:id="followUserID" layoutX="14.0" layoutY="15.0" prefHeight="26.0" prefWidth="284.0" promptText="User ID" />
       <Label layoutX="14.0" layoutY="185.0" text="News Feed" />
       <Label layoutX="14.0" layoutY="46.0" text="Currently Following" />
+      <Label fx:id="creationTimeLabel" alignment="CENTER" layoutX="14.0" layoutY="407.0" text="Creation Time: " />
    </children>
 </AnchorPane>

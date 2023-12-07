@@ -79,4 +79,14 @@ public class AdminController implements Initializable{
 		adminPanel.showPositivePercentage(visitorLabel);
 		System.out.println("Show positive Total");
 	}
+
+	public void showLastUpdate() {
+		adminPanel.showLastUpdate(visitorLabel);
+		System.out.println("Show last update");
+	}
+
+	public void verifyUsers() {
+		adminPanel.verifyUsers(visitorLabel);
+		System.out.println("Verify Users");
+	}
 }

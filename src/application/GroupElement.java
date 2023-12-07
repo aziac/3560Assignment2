@@ -7,9 +7,11 @@ public class GroupElement implements TreeNode{
 
 	private List<TreeNode> groupUsers = new ArrayList<>();
 	private String groupID;
+	private long creationTime;
 	
 	public GroupElement(String groupID) {
 		this.groupID = groupID;
+		this.setCreationTime(System.currentTimeMillis());
 	}
 	
 	
@@ -101,6 +103,16 @@ public class GroupElement implements TreeNode{
             }
         }
         return null;
-    } 
+    }
+
+
+	public long getCreationTime() {
+		return creationTime;
+	}
+
+
+	public void setCreationTime(long creationTime) {
+		this.creationTime = creationTime;
+	} 
 
 }

@@ -71,6 +71,7 @@ public class AdminPanel {
 				UserController userController = loader.getController();
 				userController.setUser(user);
 				userController.setGroup(rootGroup);
+				userController.setCreationTime();
 				
 				Scene scene = new Scene(root);
 				
@@ -105,9 +106,21 @@ public class AdminPanel {
 		visitorLabel.setText("Positivity percent: " + visitor.getPositivePercent());
 	}
 
+	public void showLastUpdate(Label visitorLabel) {
+		LastUpdateVisitor visitor = new LastUpdateVisitor();
+		rootGroup.accept(visitor);
+		visitorLabel.setText("Last Updated User: " + visitor.getLastUpdateUser());
+	}
+
 	public void showMessagesTotal(Label visitorLabel) {
 		MessagesTotalVisitor visitor = new MessagesTotalVisitor();
 		rootGroup.accept(visitor);
 		visitorLabel.setText("Messages total: " + visitor.getMessageTotal());
+	}
+
+	public void verifyUsers(Label visitorLabel) {
+		ValidIDVisitor visitor = new ValidIDVisitor();
+		rootGroup.accept(visitor);
+		visitorLabel.setText(visitor.getValidationMessage());
 	}
 }
